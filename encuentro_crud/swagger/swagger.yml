@@ -1,0 +1,285 @@
+swagger: "2.0"
+info:
+  title: beego Test API
+  description: beego has a very cool tools to autogenerate documents for your API
+  version: 1.0.0
+  termsOfService: http://beego.me/
+  contact:
+    email: astaxie@gmail.com
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+basePath: /v1
+paths:
+  /equipo_partido/:
+    get:
+      tags:
+      - equipo_partido
+      description: get EquipoPartido
+      operationId: EquipoPartidoController.Get All
+      parameters:
+      - in: query
+        name: query
+        description: Filter. e.g. col1:v1,col2:v2 ...
+        type: string
+      - in: query
+        name: fields
+        description: Fields returned. e.g. col1,col2 ...
+        type: string
+      - in: query
+        name: sortby
+        description: Sorted-by fields. e.g. col1,col2 ...
+        type: string
+      - in: query
+        name: order
+        description: Order corresponding to each sortby field, if single value, apply
+          to all sortby fields. e.g. desc,asc ...
+        type: string
+      - in: query
+        name: limit
+        description: Limit the size of result set. Must be an integer
+        type: string
+      - in: query
+        name: offset
+        description: Start position of result set. Must be an integer
+        type: string
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.EquipoPartido'
+        "404":
+          description: not found resource
+    post:
+      tags:
+      - equipo_partido
+      description: create EquipoPartido
+      operationId: EquipoPartidoController.Post
+      parameters:
+      - in: body
+        name: body
+        description: body for EquipoPartido content
+        required: true
+        schema:
+          $ref: '#/definitions/models.EquipoPartido'
+      responses:
+        "201":
+          description: '{int} models.EquipoPartido'
+        "400":
+          description: the request contains incorrect syntax
+  /equipo_partido/{id}:
+    get:
+      tags:
+      - equipo_partido
+      description: get EquipoPartido by id
+      operationId: EquipoPartidoController.Get One
+      parameters:
+      - in: path
+        name: id
+        description: The key for staticblock
+        required: true
+        type: string
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.EquipoPartido'
+        "404":
+          description: not found resource
+    put:
+      tags:
+      - equipo_partido
+      description: update the EquipoPartido
+      operationId: EquipoPartidoController.Put
+      parameters:
+      - in: path
+        name: id
+        description: The id you want to update
+        required: true
+        type: string
+      - in: body
+        name: body
+        description: body for EquipoPartido content
+        required: true
+        schema:
+          $ref: '#/definitions/models.EquipoPartido'
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.EquipoPartido'
+        "400":
+          description: the request contains incorrect syntax
+    delete:
+      tags:
+      - equipo_partido
+      description: delete the EquipoPartido
+      operationId: EquipoPartidoController.Delete
+      parameters:
+      - in: path
+        name: id
+        description: The id you want to delete
+        required: true
+        type: string
+      responses:
+        "200":
+          description: '{string} delete success!'
+        "404":
+          description: not found resource
+  /partido/:
+    get:
+      tags:
+      - partido
+      description: get Partido
+      operationId: PartidoController.Get All
+      parameters:
+      - in: query
+        name: query
+        description: Filter. e.g. col1:v1,col2:v2 ...
+        type: string
+      - in: query
+        name: fields
+        description: Fields returned. e.g. col1,col2 ...
+        type: string
+      - in: query
+        name: sortby
+        description: Sorted-by fields. e.g. col1,col2 ...
+        type: string
+      - in: query
+        name: order
+        description: Order corresponding to each sortby field, if single value, apply
+          to all sortby fields. e.g. desc,asc ...
+        type: string
+      - in: query
+        name: limit
+        description: Limit the size of result set. Must be an integer
+        type: string
+      - in: query
+        name: offset
+        description: Start position of result set. Must be an integer
+        type: string
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.Partido'
+        "404":
+          description: not found resource
+    post:
+      tags:
+      - partido
+      description: create Partido
+      operationId: PartidoController.Post
+      parameters:
+      - in: body
+        name: body
+        description: body for Partido content
+        required: true
+        schema:
+          $ref: '#/definitions/models.Partido'
+      responses:
+        "201":
+          description: '{int} models.Partido'
+        "400":
+          description: the request contains incorrect syntax
+  /partido/{id}:
+    get:
+      tags:
+      - partido
+      description: get Partido by id
+      operationId: PartidoController.Get One
+      parameters:
+      - in: path
+        name: id
+        description: The key for staticblock
+        required: true
+        type: string
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.Partido'
+        "404":
+          description: not found resource
+    put:
+      tags:
+      - partido
+      description: update the Partido
+      operationId: PartidoController.Put
+      parameters:
+      - in: path
+        name: id
+        description: The id you want to update
+        required: true
+        type: string
+      - in: body
+        name: body
+        description: body for Partido content
+        required: true
+        schema:
+          $ref: '#/definitions/models.Partido'
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.Partido'
+        "400":
+          description: the request contains incorrect syntax
+    delete:
+      tags:
+      - partido
+      description: delete the Partido
+      operationId: PartidoController.Delete
+      parameters:
+      - in: path
+        name: id
+        description: The id you want to delete
+        required: true
+        type: string
+      responses:
+        "200":
+          description: '{string} delete success!'
+        "404":
+          description: not found resource
+definitions:
+  models.EquipoPartido:
+    title: EquipoPartido
+    type: object
+    properties:
+      EquipoLocalId:
+        type: integer
+        format: int64
+      EquipoVisitanteId:
+        type: integer
+        format: int64
+      GolLocal:
+        type: number
+        format: double
+      GolVisitante:
+        type: number
+        format: double
+      Id:
+        type: integer
+        format: int64
+      PartidoId:
+        $ref: '#/definitions/models.Partido'
+  models.Partido:
+    title: Partido
+    type: object
+    properties:
+      CiudadId:
+        type: integer
+        format: int64
+      Fecha:
+        type: string
+        format: datetime
+      Id:
+        type: integer
+        format: int64
+tags:
+- name: partido
+  description: |
+    PartidoController operations for Partido
+- name: equipo_partido
+  description: |
+    EquipoPartidoController operations for EquipoPartido
